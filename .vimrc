@@ -26,12 +26,22 @@ Plugin 'tpope/vim-sensible.git'
 " Adds new operator 'gc' for easy commenting in many languages
 Plugin 'tpope/vim-commentary'
 
+" Syntax highlighting for Scala
+Plugin 'derekwyatt/vim-scala'
+
+" Syntax checking for various languages (yay avoiding runtime errors)
+Plugin 'scrooloose/syntastic'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " * * * * * * * * * End vundle setup * * * * * * * * *
-set nu
+
+" Yay setting line numbers, the relative ones are really cool
+set number
+set relativenumber
+
 filetype plugin indent on
 syntax on
 " Gruvbox's italics go wonky outside of the GUI vim
