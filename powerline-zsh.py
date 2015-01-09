@@ -21,9 +21,12 @@ class Color:
     # The following link is a pretty good resources for color values:
     # http://www.calmar.ws/vim/color-output.png
 
-    PATH_BG = 237  # dark grey
-    PATH_FG = 250  # light grey
-    CWD_FG = 254  # nearly-white grey
+    # PATH_BG = 237  # dark grey
+    PATH_BG = 51  # turqoise-ish
+    # PATH_FG = 250  # light grey
+    PATH_FG = 237  # dark grey
+    # CWD_FG = 254  # nearly-white grey
+    CWD_FG = 237  # dark grey
     SEPARATOR_FG = 244
 
     REPO_CLEAN_BG = 148  # a light green color
@@ -54,8 +57,11 @@ class Powerline:
             'separator_thin': '\u2B81'
         },
         'default': {
-            'separator': '⮀',
-            'separator_thin': '⮁'
+            # 'separator': '⮀',
+            # 'separator_thin': '⮁'
+            'separator': '\u25B6',
+            'separator_thin': '\u276F'
+
         }
     }
     LSQESCRSQ = '\\[\\e%s\\]'
