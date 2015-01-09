@@ -12,6 +12,4 @@ precmd()
 	_update_ps1
 }
 
-alias ll='ls -alF'
-alias la='ls -aF'
-alias spoon4='bash ~/pdi-ee-client-4.4.3-GA/data-integration/spoon.sh'
+source ~/.aliases

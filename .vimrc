@@ -32,6 +32,15 @@ Plugin 'derekwyatt/vim-scala'
 " Syntax checking for various languages (yay avoiding runtime errors)
 Plugin 'scrooloose/syntastic'
 
+" JS beautify
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'einars/js-beautify'
+
+" let g:jsbeautify_file = fnameescape(fnamemodify(expand("<sfile>"), ":h")."/bundle/js-beautify/beautify.js")
+
+" NERD tree for diretories
+Plugin 'scrooloose/nerdtree'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -70,3 +79,6 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set smarttab
+
+" open NERD tree by on start up with a file
+" autocmd vimenter * NERDTree
