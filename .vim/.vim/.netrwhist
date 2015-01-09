@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/ylaurence/git/pentaho/config/server/biserver-ee/pentaho-solutions/system/dashboards/themes/02-Paytronix-5/dashboards/02-Paytronix-5'
+let g:netrw_dirhist_2='/Users/ylaurence/dotfiles/.oh-my-zsh'
+let g:netrw_dirhist_3='/Users/ylaurence/dotfiles/.oh-my-zsh/lib'
+let g:netrw_dirhist_4='/Users/ylaurence'
+let g:netrw_dirhist_5='/Users/ylaurence/.vim'
+let g:netrw_dirhist_6='/Users/ylaurence/.vim/bundle'
+let g:netrw_dirhist_7='/Users/ylaurence/.vim/bundle/vim-jsbeautify'
+let g:netrw_dirhist_8='/Users/ylaurence/.vim/bundle/vim-jsbeautify/plugin'

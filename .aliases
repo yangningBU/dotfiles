@@ -1,0 +1,6 @@
+alias la='ls -aF'
+alias ll='ls -alF'
+alias spoon4='bash ~/pdi-ee-client-4.4.3-GA/data-integration/spoon.sh'
+alias vimrc='vim ~/.vimrc'
+alias aliases='vim ~/.aliases'
+alias tmux_pentaho='tmux a -t pentaho-love'
