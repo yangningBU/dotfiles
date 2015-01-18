@@ -25,8 +25,8 @@ elif [ "$1" = "help" ]; then
 else
     # Remove any previous attempts to install
     cd $HOME
-    # rm -rf $DOTFILES_DIR
-    find . -maxdepth 1 -name "$BACKUP_DIR*" | xargs rm -rf
+    rm -rf $DOTFILES_DIR
+    # find . -maxdepth 1 -name "$BACKUP_DIR*" | xargs rm -rf
     # Clone this git repo
     showit "Cloning 'dotfiles' repo..."
     git clone https://github.com/yangningBU/dotfiles.git $DOTFILES_DIR
@@ -36,6 +36,7 @@ else
         showit "Creating new backup directory called $NEW_BACKUP_DIR ..."
         mkdir $NEW_BACKUP_DIR
     else
+        # THIS WILL NEVER HAPPEN SINCE IF YOU REMOVE THE BACKUP FILES FIRST
         showit "Using current backup directory from today..."
     fi
     
