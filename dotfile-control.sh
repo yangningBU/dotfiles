@@ -18,15 +18,15 @@ showit(){
 if [ "$1" = "setup" ]; then
     # Clone this git repo
     showit "Cloning 'dotfiles' repo..."
-    echo rm -rf "$HOME/$DOTFILES_DIR"
-    echo git clone https://github.com/yangningBU/dotfiles.git "$HOME/$DOTFILES_DIR"
+    rm -rf "$HOME/$DOTFILES_DIR"
+    git clone https://github.com/yangningBU/dotfiles.git "$HOME/$DOTFILES_DIR"
     showit "Backing up current settings..."
     
     
     # Create a backup directory to hide all of the old files and prevent clutter
     if [ ! -d $HOME/$BACKUP_DIR ]; then
         showit "Creating new backup directory called $BACKUP_DIR ..."
-        echo mkdir $HOME/$BACKUP_DIR
+        mkdir $HOME/$BACKUP_DIR
     else
         showit "Using current backup directory from today..."
     fi
@@ -39,17 +39,20 @@ if [ "$1" = "setup" ]; then
     do
         if [ -e $_sourceName ]; then
             showit "Moving $_sourceName ..."
-            echo mv $HOME/$_sourceName $HOME/$BACKUP_DIR/
+            mv $HOME/$_sourceName $HOME/$BACKUP_DIR/
         fi
         showit "Setting up symlink $_linkName for $_sourceName"
-        echo ln -s $CURRENT_DIR/$_sourceName $HOME/$_linkName
+        ln -s $CURRENT_DIR/$_sourceName $HOME/$_linkName
     done < "$CURRENT_DIR/$SETUP_FILE"
+
+    showit "Installing Vundle"
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     
     logit "Pushing log changes to origin/master..."
-    echo cd $DOTFILES_DIR
-    echo mv tracking.log tracking.log.$TODAY.$INSTANCE
-    echo "find . -name \"tracking.log*\" | xargs git add"
-    echo git commit -m "logging new setup"
+    cd $DOTFILES_DIR
+    mv tracking.log tracking.log.$TODAY.$INSTANCE
+    "find . -name \"tracking.log*\" | xargs git add"
+    git commit -m "logging new setup"
     showit "Setup complete."
 elif [ "$1" = "breakdown" ]; then
     showit "Preparing to remove yangningBU/dotfile changes on `hostname -f` for $USER"
