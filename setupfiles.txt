@@ -1,0 +1,10 @@
+.vimrc .vimrc
+.vim/ .vim
+.tmux.conf .tmux.conf
+.zshrc .zshrc
+.zprofile .zprofile
+powerline-zsh.py powerline-zsh.py
+.bashrc .bashrc
+.bash_profile .bash_profile
+.env .env
+.aliases .aliases
