@@ -6,13 +6,14 @@ CURRENT_DIR="$(dirname $0)"
 TODAY=$(date +"%Y-%m-%d")
 LOG_FORMAT="%Y-%m-%d %H:%M:%S"
 BACKUP_DIR=".ybackup-$TODAY"
+INSTANCE="$USER@`hostname -f`"
 
 logit(){
-    echo "[$USER@`hostname -f`][`date +"$LOG_FORMAT"`] $1" >> $TRACKING_FILE
+    echo "[$INSTANCE][`date +"$LOG_FORMAT"`] $1" >> $TRACKING_FILE
 }
 showit(){
     logit "$1"
-    echo $1
+    echo "[`basename $0`] $1"
 }
 if [ "$1" = "setup" ]; then
     # Clone this git repo
@@ -37,17 +38,22 @@ if [ "$1" = "setup" ]; then
     while read _sourceName _linkName
     do
         if [ -e $_sourceName ]; then
-            showit "Moving $_sourcename..."
+            showit "Moving $_sourceName ..."
             echo mv $HOME/$_sourceName $HOME/$BACKUP_DIR/
         fi
         showit "Setting up symlink $_linkName for $_sourceName"
         echo ln -s $CURRENT_DIR/$_sourceName $HOME/$_linkName
     done < "$CURRENT_DIR/$SETUP_FILE"
     
+    logit "Pushing log changes to origin/master..."
+    echo cd $DOTFILES_DIR
+    echo mv tracking.log tracking.log.$TODAY.$INSTANCE
+    echo "find . -name \"tracking.log*\" | xargs git add"
+    echo git commit -m "logging new setup"
     showit "Setup complete."
 elif [ "$1" = "breakdown" ]; then
     showit "Preparing to remove yangningBU/dotfile changes on `hostname -f` for $USER"
 else
     echo "Hey, you missed an input parameter. No worries, here's an example:"
-    printf "\t./dotfile-control.sh [setup|breakdown]\n"
+    printf "$\t./dotfile-control.sh [setup|breakdown]\n"
 fi
