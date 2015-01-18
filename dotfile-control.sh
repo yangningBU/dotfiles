@@ -11,13 +11,18 @@ NEW_BACKUP_DIR="$BACKUP_DIR-$TODAY"
 INSTANCE="$USER@`hostname -f`"
 
 logit(){
-    echo "[$INSTANCE][`date +"$LOG_FORMAT"`] $1" >> "$LOG_DIR/$TRACKING_FILE"
+    echo "[$INSTANCE][`date +"$LOG_FORMAT"`] $1" >> "$HOME/$DOTFILES_DIR/$LOG_DIR/$TRACKING_FILE"
 }
 showit(){
     logit "$1"
     echo "[`basename $0`] $1"
 }
-if [ "$1" = "setup" ]; then
+if [ "$1" = "breakdown" ]; then
+    showit "Preparing to remove yangningBU/dotfile changes on `hostname -f` for $USER"
+elif [ "$1" = "help" ]; then
+    echo "If you run without any input parameters, then the setup will run. Otherwise:"
+    printf "$\t./dotfile-control.sh [help|breakdown]\n"
+else
     # Remove any previous attempts to install
     cd $HOME
     # rm -rf $DOTFILES_DIR
@@ -62,9 +67,4 @@ if [ "$1" = "setup" ]; then
     find . -name "tracking.log*" | xargs git add
     git commit -m "logging new setup"
     showit "Setup complete."
-elif [ "$1" = "breakdown" ]; then
-    showit "Preparing to remove yangningBU/dotfile changes on `hostname -f` for $USER"
-else
-    echo "Hey, you missed an input parameter. No worries, here's an example:"
-    printf "$\t./dotfile-control.sh [setup|breakdown]\n"
 fi
