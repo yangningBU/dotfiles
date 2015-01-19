@@ -52,7 +52,7 @@ else
         fi
         showit "Setting up symlink $_linkName for $_sourceName"
         ln -s $CURRENT_DIR/$_sourceName $HOME/$_linkName
-    done < "$CURRENT_DIR/$SETUP_FILE"
+    done < "$HOME/$DOTFILES_DIR/$SETUP_FILE"
 
     showit "Installing Vundle"
     if [ -d $HOME/.vim/bundle ]; then
