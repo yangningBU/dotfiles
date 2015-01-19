@@ -67,5 +67,6 @@ else
     mv tracking.log tracking.log.$TODAY.$INSTANCE
     find . -name "tracking.log*" | xargs git add
     git commit -m "logging new setup"
+    git push origin master
     showit "Setup complete."
 fi
