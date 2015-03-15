@@ -13,3 +13,5 @@ precmd()
 }
 
 source ~/.aliases
+bindkey '[C' forward-word # alt + ->
+bindkey '[D' backward-word # alt + <-
