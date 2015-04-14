@@ -46,13 +46,13 @@ colorscheme gruvbox
 " colorscheme solarized
 
 " Highlight the current line
-set cursorline
+set nocursorline
 
 " Remap color to semicolon and vis-versa
-nnoremap : ;
-nnoremap ; :
-vnoremap ; :
-vnoremap : ;
+" nnoremap : ;
+" nnoremap ; :
+" vnoremap ; :
+" vnoremap : ;
 
 set hlsearch
 set mouse:a
@@ -89,3 +89,14 @@ set laststatus=2                           " Always show the status line, NO EXC
 let g:airline_powerline_fonts = 1          " Use useful icons
 
 " inoremap ^G <Esc>
+
+" Fugitive shortcuts
+nnoremap gs :Gstatus
+nnoremap gd :Gdiff
+nnoremap dg :diffget
+nnoremap dp :diffput
+nnoremap gr :Gread
+nnoremap gw :Gwrite
+
+set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:…
+set list 
