@@ -30,23 +30,17 @@ filetype plugin indent on    " required
 
 " * * * * * * * * * End vundle setup * * * * * * * * *
 
-" Yay setting line numbers, the relative ones are really cool
+" Standard Settings
 " set number
-set relativenumber
-
-filetype plugin indent on
-syntax on
-" Gruvbox's italics go wonky outside of the GUI vim
-if !has("gui_running")
-	let g:gruvbox_italicize_comments=0
-endif
-" let g:solarized_termcolors=256
-set background=dark
-colorscheme gruvbox
-" colorscheme solarized
-
-" Highlight the current line
-set nocursorline
+set relativenumber                          " Relative line numbers for easy h,j,k,l motion!
+set cursorline                              " Highlight the current line
+set paste                                   " Pasting should keep intended indentation
+filetype plugin indent on                   " I don't remember what this is for
+syntax on                                   " Highlight that syntax so you know what's going on
+set hlsearch                               " Highlight when you search for stuff - super helpful!
+set mouse:a                                 " Allow use of the mouse inside of vim (doesn't work with all terminals)
+let mapleader = " "                         " Set <leader> to be a space
+let g:netrw_dirhistmax = 0                  " Make it so .vim/.netrwhist file doesn't get written to
 
 " Remap color to semicolon and vis-versa
 " nnoremap : ;
@@ -54,10 +48,7 @@ set nocursorline
 " vnoremap ; :
 " vnoremap : ;
 
-set hlsearch
-set mouse:a
-
-" Text tab indent etc.
+" Standardize the tab indent to 4 spaces instead
 set expandtab
 set shiftwidth=4
 set tabstop=4
@@ -65,7 +56,6 @@ set smarttab
 
 " set leader to be space
 let mapleader = " "
-nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>p :CtrlP<CR>
 
 " Navigate between windows with space plus h,j,k,l
@@ -76,10 +66,11 @@ nnoremap <leader>l :wincmd l<CR>
 
 " open NERD tree by on start up with a file
 " autocmd vimenter * NERDTree
+" Toggle open the Nerd Tree window with space+n
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " Reload vimrc with space+r
 nnoremap <leader>r :source ~/.vimrc<CR>
-" echo 'VIMRC Reloaded! <CR> 
 
 " EasyMotion activate on leader f
 nmap <leader>f <Plug>(easymotion-s)
@@ -100,3 +91,13 @@ nnoremap gw :Gwrite
 
 set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:…
 set list 
+
+" Gruvbox's italics go wonky outside of the GUI vim
+if !has("gui_running")
+	let g:gruvbox_italicize_comments=0
+endif
+" let g:solarized_termcolors=256
+set background=dark
+colorscheme gruvbox
+" colorscheme solarized
+
