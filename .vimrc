@@ -89,6 +89,10 @@ nnoremap dp :diffput
 nnoremap gr :Gread
 nnoremap gw :Gwrite
 
+" CTags
+nnoremap <leader>t :CtrlPTag<cr>
+nnoremap <leader>c :!ctags -R $(git rev-parse --show-toplevel) && echo "Done generating ctags"<CR>
+
 set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:…
 set list 
 
