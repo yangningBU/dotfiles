@@ -36,3 +36,4 @@ alias pxcp='ssh ylaurence@pc-ylaurence "pbpaste" | pbcopy && echo "Successfully 
 alias qapdi='ssh qapdi'
 alias dl='cd ~/Downloads'
 alias pipe2slack='python ~/Downloads/pipe2slack/slack.py'
+alias ddp='tmux a -t ddp'
