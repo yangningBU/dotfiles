@@ -105,3 +105,17 @@ set background=dark
 colorscheme gruvbox
 " colorscheme solarized
 
+
+" compile and rebuild with maven just until the test phase
+au BufNewFile,BufRead *.scala set makeprg=mvn\ clean\ test
+nnoremap <Leader>m :wa <bar> :make<CR>
+
+" prevent compile error file from showing up in current file, rather use the currently open tab for that file to show error
+set switchbuf=useopen,usetab,newtab
+
+" open marked files in ctrl-p in new tabs by default 
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
