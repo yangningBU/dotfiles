@@ -84,7 +84,13 @@ let g:airline_powerline_fonts = 1          " Use useful icons
 " Fugitive shortcuts
 nnoremap gs :Gstatus
 nnoremap gd :Gdiff
-nnoremap dg :diffget
+nnoremap do :diffget
+nnoremap g3 :1,$+1diffget //3<CR>
+nnoremap gm :1,$+1diffget //3<CR>
+nnoremap gr :1,$+1diffget //3<CR>
+nnoremap g2 :1,$+1diffget //2<CR>
+nnoremap gt :1,$+1diffget //2<CR>
+nnoremap gl :1,$+1diffget //2<CR>
 nnoremap dp :diffput
 nnoremap gr :Gread
 nnoremap gw :Gwrite
