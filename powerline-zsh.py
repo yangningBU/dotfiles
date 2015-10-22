@@ -9,6 +9,7 @@ import sys
 import re
 import argparse
 import socket
+from time import strftime
 
 encoding = sys.getdefaultencoding()
 
@@ -59,7 +60,7 @@ class Powerline:
         'default': {
             # 'separator': '⮀',
             # 'separator_thin': '⮁'
-            'separator': '\u25B6',
+            'separator': '', #'\u25B6',
             'separator_thin': '\u276F'
 
         }
@@ -132,7 +133,8 @@ def add_cwd_segment(powerline, cwd, maxdepth, cwd_only=False):
         names = names[:2] + ['⋯ '] + names[2 - maxdepth:]
 
     if not cwd_only:
-        powerline.append(Segment(powerline,socket.gethostname(),Color.CWD_FG, Color.PATH_BG))
+        powerline.append(Segment(powerline,socket.gethostname()+" ",Color.CWD_FG, Color.PATH_BG,""))
+        powerline.append(Segment(powerline,strftime("%Y-%m-%d %H:%M:%S")+"\n",254,237,""))
         for n in names[:-1]:
             powerline.append(Segment(powerline, ' %s ' % n, Color.PATH_FG, Color.PATH_BG, powerline.separator_thin, Color.SEPARATOR_FG))
     powerline.append(Segment(powerline, ' %s ' % names[-1], Color.CWD_FG, Color.PATH_BG))
