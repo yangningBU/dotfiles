@@ -100,6 +100,10 @@ nnoremap <leader>c :!ctags -R $(git rev-parse --show-toplevel) && echo "Done gen
 set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:…
 set list 
 
+
+nnoremap <leader>m :!mvn test<CR>
+
+
 " Gruvbox's italics go wonky outside of the GUI vim
 if !has("gui_running")
 	let g:gruvbox_italicize_comments=0
