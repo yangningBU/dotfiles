@@ -113,6 +113,8 @@ set background=dark
 colorscheme gruvbox
 " colorscheme solarized
 
+" use fancy for patched font
+let g:Powerline_symbols = 'fancy'
 
 " compile and rebuild with maven just until the test phase
 au BufNewFile,BufRead *.scala set makeprg=mvn\ clean\ test
