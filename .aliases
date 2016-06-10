@@ -1,3 +1,4 @@
+alias grep='grep --color=auto'
 alias la='ls -aF'
 alias ll='ls -alF'
 alias spoon4='bash ~/pdi-ee-client-4.4.3-GA/data-integration/spoon.sh'
@@ -37,4 +38,9 @@ alias qapdi='ssh qapdi'
 alias dl='cd ~/Downloads'
 alias pipe2slack='python ~/Downloads/pipe2slack/slack.py'
 alias ddp='tmux a -t ddp'
-eval $(thefuck --alias)
+eval $(/usr/local/bin/thefuck --alias)
+alias chmox='chmod a+x'
+alias pxs='tmux a -t pxs'
+alias h='hadoop fs'
+alias hls='hadoop fs -ls'
+alias sshconfig='cat ~/.ssh/config'
