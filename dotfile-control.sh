@@ -11,7 +11,7 @@ NEW_BACKUP_DIR="$BACKUP_DIR-$TODAY"
 INSTANCE="$USER@`hostname -f`"
 
 logit(){
-    echo "[$INSTANCE][`date +"$LOG_FORMAT"`] $1" >> "$HOME/$DOTFILES_DIR/$LOG_DIR/$TRACKING_FILE"
+    echo "[$INSTANCE][`date +"$LOG_FORMAT"`] $1"
 }
 showit(){
     logit "$1"
@@ -62,8 +62,5 @@ else
     git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
 
-    logit "Pushing log changes to origin/master..."
-    cd $DOTFILES_DIR/$LOG_DIR
-    mv tracking.log tracking.log.$TODAY.$INSTANCE
     showit "Setup complete."
 fi
