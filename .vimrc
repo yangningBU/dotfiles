@@ -75,20 +75,12 @@ nnoremap <leader>r :source ~/.vimrc<CR>
 " EasyMotion activate on leader f
 nmap <leader>f <Plug>(easymotion-s)
 
-" Airline
-set laststatus=2                           " Always show the status line, NO EXCEPTIONS
-let g:airline_powerline_fonts = 1          " Use useful icons
-
-" inoremap ^G <Esc>
-
 " Fugitive shortcuts
 nnoremap gs :Gstatus
 nnoremap gd :Gdiff
-nnoremap do :diffget
+nnoremap dg :diffget
 nnoremap g3 :1,$+1diffget //3<CR>
-nnoremap gr :1,$+1diffget //3<CR>
 nnoremap g2 :1,$+1diffget //2<CR>
-nnoremap gl :1,$+1diffget //2<CR>
 nnoremap dp :diffput
 nnoremap gr :Gread
 nnoremap gw :Gwrite
@@ -115,6 +107,7 @@ colorscheme gruvbox
 
 " use fancy for patched font
 let g:Powerline_symbols = 'fancy'
+set guifont=Monaco\ for\ Powerline
 
 " compile and rebuild with maven just until the test phase
 au BufNewFile,BufRead *.scala set makeprg=mvn\ clean\ test
