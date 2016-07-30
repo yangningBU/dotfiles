@@ -1,5 +1,5 @@
 #!/bin/bash
-DOTFILES_DIR=.dotfiles
+DOTFILES_DIR=dotfiles
 SETUP_FILE=setupfiles.txt
 TRACKING_FILE=tracking.log
 LOG_DIR=logs
@@ -51,7 +51,7 @@ else
             mv $_sourceName $NEW_BACKUP_DIR/
         fi
         showit "Setting up symlink $_linkName for $_sourceName"
-        ln -s $CURRENT_DIR/$_sourceName $HOME/$_linkName
+        ln -s $HOME/$DOTFILES_DIR/$_sourceName $HOME/$_linkName
     done < "$HOME/$DOTFILES_DIR/$SETUP_FILE"
 
     showit "Installing Vundle"
@@ -65,8 +65,5 @@ else
     logit "Pushing log changes to origin/master..."
     cd $DOTFILES_DIR/$LOG_DIR
     mv tracking.log tracking.log.$TODAY.$INSTANCE
-    find . -name "tracking.log*" | xargs git add
-    git commit -m "logging new setup"
-    git push origin master
     showit "Setup complete."
 fi
