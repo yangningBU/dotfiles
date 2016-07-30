@@ -58,11 +58,11 @@ class Powerline:
             'separator_thin': '\u2B81'
         },
         'default': {
-            # 'separator': '⮀',
-            # 'separator_thin': '⮁'
-            'separator': '', #'\u25B6',
-            'separator_thin': '\u276F'
-
+            'separator': '⮀',
+            'separator_thin': '⮁'
+            ## Replace with the following if patched fonts doesn't work:
+            # 'separator': '', #'\u25B6',
+            # 'separator_thin': '\u276F'
         }
     }
     LSQESCRSQ = '\\[\\e%s\\]'
