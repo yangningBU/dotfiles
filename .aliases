@@ -38,7 +38,6 @@ alias qapdi='ssh qapdi'
 alias dl='cd ~/Downloads'
 alias pipe2slack='python ~/Downloads/pipe2slack/slack.py'
 alias ddp='tmux a -t ddp'
-eval $(/usr/local/bin/thefuck --alias)
 alias chmox='chmod a+x'
 alias pxs='tmux a -t pxs'
 alias h='hadoop fs'
