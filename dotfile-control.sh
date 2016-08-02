@@ -15,7 +15,6 @@ logit(){
 }
 showit(){
     logit "$1"
-    echo "[`basename $0`] $1"
 }
 if [ "$1" = "breakdown" ]; then
     showit "Preparing to remove yangningBU/dotfile changes on `hostname -f` for $USER"
@@ -57,7 +56,7 @@ else
     showit "Installing Vundle"
     if [ -d $HOME/.vim/bundle ]; then
         logit ".vim/bundle doesn't exist, creating a new one"
-        mkdir -p .vim/bundle
+        mkdir -p $HOME/.vim/bundle
     fi
     git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
     vim +PluginInstall +qall
