@@ -31,8 +31,8 @@ filetype plugin indent on    " required
 " * * * * * * * * * End vundle setup * * * * * * * * *
 
 " Standard Settings
-" set number
-set relativenumber                          " Relative line numbers for easy h,j,k,l motion!
+set number
+" set relativenumber                          " Relative line numbers for easy h,j,k,l motion!
 set cursorline                              " Highlight the current line
 set paste                                   " Pasting should keep intended indentation
 filetype plugin indent on                   " I don't remember what this is for
@@ -84,6 +84,7 @@ nnoremap g2 :1,$+1diffget //2<CR>
 nnoremap dp :diffput
 nnoremap gr :Gread
 nnoremap gw :Gwrite
+set diffopt+=vertical
 
 " CTags
 nnoremap <leader>t :CtrlPTag<cr>

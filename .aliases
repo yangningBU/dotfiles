@@ -43,3 +43,6 @@ alias pxs='tmux a -t pxs'
 alias h='hadoop fs'
 alias hls='hadoop fs -ls'
 alias sshconfig='cat ~/.ssh/config'
+
+# ASL(STEM|AI)
+alias aslai='tmux a -t aslai'
