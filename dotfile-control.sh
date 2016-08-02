@@ -54,7 +54,7 @@ else
     done < "$HOME/$DOTFILES_DIR/$SETUP_FILE"
 
     showit "Installing Vundle"
-    if [ -d $HOME/.vim/bundle ]; then
+    if [ ! -d $HOME/.vim/bundle ]; then
         logit ".vim/bundle doesn't exist, creating a new one"
         mkdir -p $HOME/.vim/bundle
     fi
