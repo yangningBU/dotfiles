@@ -38,6 +38,9 @@ else
         # THIS WILL NEVER HAPPEN SINCE IF YOU REMOVE THE BACKUP FILES FIRST
         showit "Using current backup directory from today..."
     fi
+
+    showit "Enabling global .gitignore..."
+    git config --global core.excludesfile '~/.gitignore_global'
     
     # The setup file currently has each line entry with two values, 
     # the name of what the file is called in my repository (_sourceName)
