@@ -1,7 +1,7 @@
 # dotfiles
 This is how I stay alive... on various machines.
 
-Install with `source <(curl -s https://raw.githubusercontent.com/yangningBU/dotfiles/master/dotfile-control.sh)`
+Install with `curl -s https://raw.githubusercontent.com/yangningBU/dotfiles/master/dotfile-control.sh | bash -`
 
 You will notice there is a forked powerline.py from [powerline](https://github.com/milkbikis/powerline-bash) here as well.
 
