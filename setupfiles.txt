@@ -7,3 +7,4 @@ powerline-zsh.py powerline-zsh.py
 .bash_profile .bash_profile
 .env .env
 .aliases .aliases
+.gitignore_global .gitignore_global
