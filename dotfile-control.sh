@@ -6,7 +6,7 @@ LOG_DIR=logs
 CURRENT_DIR="$(dirname $0)"
 TODAY=$(date +"%Y-%m-%d")
 LOG_FORMAT="%Y-%m-%d %H:%M:%S"
-BACKUP_DIR=".ybackup"
+BACKUP_DIR=".dotfiles_backup"
 NEW_BACKUP_DIR="$BACKUP_DIR-$TODAY"
 INSTANCE="$USER@`hostname -f`"
 
