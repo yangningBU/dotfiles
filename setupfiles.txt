@@ -3,8 +3,6 @@
 .zshrc .zshrc
 .zprofile .zprofile
 powerline-zsh.py powerline-zsh.py
-.bashrc .bashrc
-.bash_profile .bash_profile
 .env .env
 .aliases .aliases
 .gitignore_global .gitignore_global
