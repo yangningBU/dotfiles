@@ -1,7 +1,25 @@
 # dotfiles
 This is how I stay alive... on various machines.
 
-Install with `curl -s https://raw.githubusercontent.com/yangningBU/dotfiles/master/dotfile-control.sh | bash -`
+## Just Vim Setup
+
+If you just want the vim pimp:
+- install Vundle with
+```
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+- then copy my .vimrc file to ~/.vimrc on your computer
+- open vim and install the Vundle packages with `:VundleInstall`
+- then exit and go back into vim and everything should be peachy keen
+
+## Whole Env
+
+If you want the whole environment which includes nifty aliases and shortcuts you can install my env setup.
+
+Install with
+```
+curl -s https://raw.githubusercontent.com/yangningBU/dotfiles/master/dotfile-control.sh | bash -
+```
 
 You will notice there is a forked powerline.py from [powerline](https://github.com/milkbikis/powerline-bash) here as well.
 
