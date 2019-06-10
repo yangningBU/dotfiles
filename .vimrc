@@ -1,5 +1,4 @@
 " * * * * * * * * * Begin vundle setup * * * * * * * * *
-
 set nocompatible
 filetype off
 
@@ -8,7 +7,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'                  " Let Vundle manage Vundle, required
-"Plugin 'altercation/vim-colors-solarized'  " Solarized Color Theme Plugin
 Plugin 'morhetz/gruvbox'                    " Gruvbox Color Theme Plugin (just another option)
 Plugin 'tpope/vim-sensible.git'             " basic vimrc collection that most people like to use
 Plugin 'tpope/vim-commentary'               " Adds new operator 'gc' for easy commenting in many languages
@@ -24,6 +22,7 @@ Plugin 'bronson/vim-visual-star-search'     " expand * search to work in visual 
 Plugin 'scrooloose/nerdtree'                " NERD tree for diretories
 Plugin 'Lokaltog/vim-easymotion'            " Vimium-like movements with search (THIS IS BOMB)
 Plugin 'bling/vim-airline'                  " Add powerline to show git branch
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -31,26 +30,17 @@ filetype plugin indent on    " required
 " * * * * * * * * * End vundle setup * * * * * * * * *
 
 " Standard Settings
-set number
-" set relativenumber                          " Relative line numbers for easy h,j,k,l motion!
+set number                                  " Show line numbers
 set cursorline                              " Highlight the current line
 set paste                                   " Pasting should keep intended indentation
-filetype plugin indent on                   " I don't remember what this is for
+filetype on                                 " Autodetect filetype (to use with syntax highlighting)
 syntax on                                   " Highlight that syntax so you know what's going on
-set hlsearch                               " Highlight when you search for stuff - super helpful!
-set mouse:a                                 " Allow use of the mouse inside of vim (doesn't work with all terminals)
-let mapleader = " "                         " Set <leader> to be a space
+set hlsearch                                " Highlight when you search for stuff - super helpful!
 let g:netrw_dirhistmax = 0                  " Make it so .vim/.netrwhist file doesn't get written to
-
-" Remap color to semicolon and vis-versa
-" nnoremap : ;
-" nnoremap ; :
-" vnoremap ; :
-" vnoremap : ;
 
 " Standardize the tab indent to 4 spaces instead
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set tabstop=4
 set smarttab
 
@@ -93,18 +83,14 @@ nnoremap <leader>c :!ctags -R $(git rev-parse --show-toplevel) && echo "Done gen
 set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:…
 set list 
 
-
 nnoremap <leader>m :!mvn test<CR>
-
 
 " Gruvbox's italics go wonky outside of the GUI vim
 if !has("gui_running")
-	let g:gruvbox_italicize_comments=0
+  let g:gruvbox_italicize_comments=0
 endif
-" let g:solarized_termcolors=256
 set background=dark
 colorscheme gruvbox
-" colorscheme solarized
 
 " use fancy for patched font
 let g:Powerline_symbols = 'fancy'
