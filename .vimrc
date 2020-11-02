@@ -74,7 +74,6 @@ nnoremap g2 :1,$+1diffget //2<CR>
 nnoremap dp :diffput
 nnoremap gr :Gread
 nnoremap gw :Gwrite
-set diffopt+=vertical
 
 " CTags
 nnoremap <leader>t :CtrlPTag<cr>
