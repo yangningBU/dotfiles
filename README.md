@@ -4,14 +4,15 @@ This is how I stay alive... on various machines.
 ## Just Vim Setup
 
 If you just want the vim pimp:
-- install Vundle with
 ```
 curl -s https://raw.githubusercontent.com/yangningBU/dotfiles/master/setup-vim.sh | bash -
 ```
+Checkout the plugins and configuration in `.vimrc`.
 
 ## Whole Env
 
 If you want the whole environment which includes nifty aliases and shortcuts you can install my env setup.
+WARNING: modifies prompt, adds aliases, and moves existing bash and zsh configs out of the way.
 
 Install with
 ```
