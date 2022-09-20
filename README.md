@@ -6,11 +6,8 @@ This is how I stay alive... on various machines.
 If you just want the vim pimp:
 - install Vundle with
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+curl -s https://raw.githubusercontent.com/yangningBU/dotfiles/master/setup-vim.sh | bash -
 ```
-- then copy my .vimrc file to ~/.vimrc on your computer
-- open vim and install the Vundle packages with `:VundleInstall`
-- then exit and go back into vim and everything should be peachy keen
 
 ## Whole Env
 
