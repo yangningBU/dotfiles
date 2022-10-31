@@ -66,8 +66,8 @@ nnoremap <leader>r :source ~/.vimrc<CR>
 nmap <leader>f <Plug>(easymotion-s)
 
 " Fugitive shortcuts
-nnoremap gs :Gstatus
-nnoremap gd :Gdiff
+nnoremap gs :G
+nnoremap gd :Gvdiffsplit
 nnoremap dg :diffget
 nnoremap g3 :1,$+1diffget //3<CR>
 nnoremap g2 :1,$+1diffget //2<CR>
