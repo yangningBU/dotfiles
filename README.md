@@ -3,11 +3,15 @@ This is how I stay alive... on various machines.
 
 ## Just Vim Setup
 
-If you just want the vim pimp:
+If you just want the vim pimp, first download [Vundle](https://github.com/VundleVim/Vundle.vim).
+
+Then install the `.vimrc`:
 ```
 curl -s https://raw.githubusercontent.com/yangningBU/dotfiles/master/setup-vim.sh | bash -
 ```
 Checkout the plugins and configuration in `.vimrc`.
+
+Then run `:PluginInstall`
 
 ## Whole Env
 
